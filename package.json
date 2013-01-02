@@ -1,0 +1,18 @@
+{
+  "name": "fabric_softener",
+  "version": "0.0.0",
+  "description": "Journeyman middleware for serving static content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bthesorceror/fabric_softener.git"
+  },
+  "author": "Brandon Farmer",
+  "license": "BSD",
+  "dependencies": {
+    "mime": "~1.2.7"
+  }
+}
