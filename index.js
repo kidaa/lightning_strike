@@ -10,13 +10,15 @@ FabricSoftener.prototype.middleware = function() {
   return function(req, res, next) {
     var path = self.starting_path + req.url;
     fs.exists(path, function(exists) {
-      if (exists) {
-        res.writeHead(200, { 'Content-Type': mime.lookup(path) });
-        var file = fs.createReadStream(path);
-        file.pipe(res);
-      } else {
-        next();
-      }
+      fs.stat(path, function(err, stats) {
+        if (exists && !stats.isDirectory()) {
+          res.writeHead(200, { 'Content-Type': mime.lookup(path) });
+          var file = fs.createReadStream(path);
+          file.pipe(res);
+        } else {
+          next();
+        }
+      });
     });
   }
 }
