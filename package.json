@@ -1,8 +1,8 @@
 {
-  "name": "fabric_softener",
+  "name": "lightning_strike",
   "version": "0.0.0",
   "description": "Journeyman middleware for serving static content",
-  "main": "index.js",
+  "main": "lightning_strike.js",
   "scripts": {
     "test": "mocha"
   },
