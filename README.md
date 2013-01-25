@@ -1,6 +1,8 @@
 lightning_strike
 ===============
 
+[![Build Status](https://travis-ci.org/bthesorceror/lightning_strike.png?branch=master)](https://travis-ci.org/bthesorceror/lightning_strike)
+
 Journeyman middleware for serving static content
 
 Blowing up your server with tons of static content
