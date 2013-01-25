@@ -1,6 +1,6 @@
 {
   "name": "lightning_strike",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Journeyman middleware for serving static content",
   "main": "lightning_strike.js",
   "scripts": {
