@@ -18,7 +18,7 @@ var path            = require('path');
 var server = new Journeyman(80);
 var lightning = new LightningStrike(path.join(__dirname, 'test_dir'));
 
-server.use(lightning.middleware());
+server.use(lightning.middleware);
 
 server.listen();
 ```
