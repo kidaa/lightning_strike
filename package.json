@@ -1,6 +1,6 @@
 {
   "name": "lightning_strike",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Journeyman middleware for serving static content",
   "main": "index",
   "scripts": {
@@ -13,12 +13,11 @@
   "author": "Brandon Farmer",
   "license": "BSD",
   "dependencies": {
-    "mime": "~1.2.7",
-    "coffee-script": "~1.4.0"
+    "mime": "~1.2.7"
   },
   "devDependencies": {
     "mocha": "~1.8.1",
-    "mockery": "~1.4.0",
-    "sinon": "~1.5.2"
+    "sinon": "~1.5.2",
+    "coffee-script": "~1.4.0"
   }
 }

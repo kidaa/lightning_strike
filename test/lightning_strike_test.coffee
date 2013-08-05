@@ -1,7 +1,7 @@
 assert    = require('assert')
 sinon     = require('sinon')
 path      = require('path')
-file_path = '../lib/lightning_strike'
+file_path = '../index'
 
 describe 'LightningStrike', () ->
   it 'should return a middleware', () ->
@@ -21,7 +21,7 @@ describe 'LightningStrike', () ->
     it 'static paths return true', () ->
       result = lightning.isStaticPath('/static/file.txt')
       assert.ok(result)
-  
+
   describe '#buildFilePath', () ->
     LightningStrike = require(file_path)
     lightning       = new LightningStrike('/hello/files')
@@ -33,7 +33,7 @@ describe 'LightningStrike', () ->
   it 'should ignore non static paths', () ->
     LightningStrike = require(file_path)
     lightning       = new LightningStrike()
-    middleware      = lightning.middleware
+    middleware      = lightning.middleware()
     req             = { url: '/testing' }
     res             = sinon.stub()
     next            = sinon.spy()
@@ -56,7 +56,7 @@ describe 'LightningStrike', () ->
     LightningStrike = require(file_path)
     dir_path       = path.join(__dirname, 'fixtures')
     lightning       = new LightningStrike(dir_path, options)
-    middleware      = lightning.middleware
+    middleware      = lightning.middleware()
     req             = { url: '/static/test_dir' }
     res             = sinon.stub()
     next            = sinon.spy()
@@ -89,7 +89,7 @@ describe 'LightningStrike', () ->
 
     LightningStrike = require(file_path)
     lightning       = new LightningStrike('..', options)
-    middleware      = lightning.middleware
+    middleware      = lightning.middleware()
 
     middleware(reqMock, resMock, next)
 
