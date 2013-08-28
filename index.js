@@ -27,7 +27,11 @@ LightningStrike.prototype.buildFilePath = function(url) {
 LightningStrike.prototype.handleFile = function(path, res, next) {
   var self = this;
   return function(err, stats) {
-    if (err) return;
+    if (err) {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
     if (!stats.isDirectory())
       self.renderFile(res, path);
     else
